@@ -16,7 +16,7 @@ class SideMenuItem extends StatelessWidget {
         onTap: onTap,
       );
 
-    return HorizontalMenueItem(
+    return HorizontalMenuItem(
       itemName: itemName,
       onTap: onTap,
     );
