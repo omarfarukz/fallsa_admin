@@ -1,6 +1,7 @@
 import 'package:fallsa_admin/constants/controllers.dart';
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
+import 'package:fallsa_admin/pages/authentication/authentication.dart';
 import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:fallsa_admin/widgets/side_menu_item.dart';
@@ -47,35 +48,38 @@ class SideMenu extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 40,
-                ),
-                Divider(
-                  color: lightGrey.withOpacity(.1),
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: sideMenueItems
-                      .map((itemName) => SideMenuItem(
-                            itemName: itemName == AuthenticationPageRoute
-                                ? "Log Out"
-                                : itemName,
-                            onTap: () {
-                              if (itemName == AuthenticationPageRoute) {
-                                //go to log in page
-                              }
-                              if (!menuController.isActive(itemName)) {
-                                menuController.changActiveitemTo(itemName);
-                                if (ResponsiveWidget.isSmallScreen(context))
-                                  Get.back();
-                                //go to item name route
-                              }
-                            },
-                          ))
-                      .toList(),
-                ),
               ],
-            )
+            ),
+          SizedBox(
+            height: 40,
+          ),
+          Divider(
+            color: lightGrey.withOpacity(.1),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: sideMenueItems
+                .map((item) => SideMenuItem(
+                      itemName: item.name,
+                      onTap: () {
+                        if (item.route == AuthenticationPageRoute) {
+                          //go to log in page
+
+                          menuController
+                              .changActiveitemTo(OverViewPageDisplayName);
+                          Get.offAll(AuthenticationPageRoute);
+                        }
+                        if (!menuController.isActive(item.name)) {
+                          menuController.changActiveitemTo(item.name);
+                          if (ResponsiveWidget.isSmallScreen(context))
+                            Get.back();
+                          //go to item name route
+                          navigationController.navigateTo(item.route);
+                        }
+                      },
+                    ))
+                .toList(),
+          ),
         ],
       ),
     );

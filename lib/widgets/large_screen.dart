@@ -1,3 +1,5 @@
+import 'package:fallsa_admin/helpers/local_navigator.dart';
+import 'package:fallsa_admin/widgets/side_menu.dart';
 import 'package:flutter/material.dart';
 
 class LargeScreen extends StatelessWidget {
@@ -9,14 +11,8 @@ class LargeScreen extends StatelessWidget {
       children: [
         Expanded(
             // flex: 1,
-            child: Container(
-          color: Colors.red,
-        )),
-        Expanded(
-            flex: 5,
-            child: Container(
-              color: Colors.blue,
-            ))
+            child: SideMenu()),
+        Expanded(flex: 5, child: localNavigator())
       ],
     );
   }

@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class SiteLayout extends StatelessWidget {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
+  SiteLayout({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
