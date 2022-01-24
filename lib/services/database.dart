@@ -6,7 +6,7 @@ class Database {
   Future<bool> createNewUser(UserModel user) async {
     try {
       await _firestore.collection("admin").doc(user.id).set({
-        "name": user.name,
+        // "name": user.name,
         "email": user.email,
       });
       return true;
