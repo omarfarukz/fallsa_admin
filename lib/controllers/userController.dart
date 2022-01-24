@@ -2,7 +2,7 @@ import 'package:fallsa_admin/model/userModel.dart';
 import 'package:get/get.dart';
 
 class UserController extends GetxController {
-  final Rx<UserModel> _userModel = UserModel().obs;
+  final Rxn<UserModel> _userModel = UserModel().obs;
 
   UserModel get user => _userModel.value;
 

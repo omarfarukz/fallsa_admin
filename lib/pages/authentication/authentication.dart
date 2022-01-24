@@ -97,7 +97,9 @@ class AuthenticationPage extends GetWidget<AuthController> {
               ),
               InkWell(
                 onTap: () {
-                  Get.offAllNamed(rootRoute);
+                  controller.login(
+                      emailController.text, passwordController.text);
+                  // Get.offAllNamed(rootRoute);//new commend
                   // Get.offAll(() => SiteLayout());
                 },
                 child: Container(
