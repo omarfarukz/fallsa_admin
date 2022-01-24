@@ -1,4 +1,5 @@
 import 'package:fallsa_admin/constants/style.dart';
+import 'package:fallsa_admin/controllers/authController.dart';
 import 'package:fallsa_admin/layout.dart';
 import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
@@ -6,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AuthenticationPage extends StatelessWidget {
-  const AuthenticationPage({Key key}) : super(key: key);
+class AuthenticationPage extends GetWidget<AuthController> {
+  // const AuthenticationPage({Key key}) : super(key: key);
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +56,7 @@ class AuthenticationPage extends StatelessWidget {
                 height: 15,
               ),
               TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                     labelText: "Email",
                     hintText: "abc@domain.com",
@@ -63,6 +67,7 @@ class AuthenticationPage extends StatelessWidget {
                 height: 15,
               ),
               TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     labelText: "Password",

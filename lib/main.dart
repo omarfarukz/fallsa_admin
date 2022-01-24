@@ -1,12 +1,14 @@
+import 'package:fallsa_admin/controllers/bindings/authBinding.dart';
 import 'package:fallsa_admin/controllers/menu_controller.dart';
 import 'package:fallsa_admin/controllers/navigation_controller.dart';
-import 'package:fallsa_admin/layout.dart';
+
 import 'package:fallsa_admin/pages/404/error_page.dart';
-import 'package:fallsa_admin/pages/authentication/authentication.dart';
+
 import 'package:fallsa_admin/routing/routes.dart';
+import 'package:fallsa_admin/utils/root.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -23,33 +25,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: AuthenticationPageRoute,
-      unknownRoute: GetPage(
-          name: "/not-found",
-          page: () => PageNotFound(),
-          transition: Transition.fadeIn),
-      getPages: [
-        GetPage(
-            name: rootRoute,
-            page: () {
-              return SiteLayout();
-            }),
-        GetPage(
-            name: AuthenticationPageRoute, page: () => AuthenticationPage()),
-      ],
-      debugShowCheckedModeBanner: false,
-      title: "Dashboard",
-      theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          textTheme:
-              GoogleFonts.mulishTextTheme(Theme.of(context).textTheme).apply(
-            bodyColor: Colors.black,
-          ),
-          pageTransitionsTheme: PageTransitionsTheme(builders: {
-            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-          }),
-          primaryColor: Colors.blue),
+      // initialRoute: AuthenticationPageRoute,
+      initialBinding: AuthBinding(),
+      // unknownRoute: GetPage(
+      //     name: "/not-found",
+      //     page: () => PageNotFound(),
+      //     transition: Transition.fadeIn),
+      // getPages: [
+      //   GetPage(
+      //       name: rootRoute,
+      //       page: () {
+      //         return SiteLayout();
+      //       }),
+      //   GetPage(
+      //       name: AuthenticationPageRoute, page: () => AuthenticationPage()),
+      // ],
+      // debugShowCheckedModeBanner: false,
+      // title: "Dashboard",
+      // theme: ThemeData(
+      //     scaffoldBackgroundColor: Colors.white,
+      //     textTheme:
+      //         GoogleFonts.mulishTextTheme(Theme.of(context).textTheme).apply(
+      //       bodyColor: Colors.black,
+      //     ),
+      //     pageTransitionsTheme: PageTransitionsTheme(builders: {
+      //       TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+      //       TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+      //     }),
+      //     primaryColor: Colors.blue),
+      home: Root(),
     );
   }
 }
