@@ -6,6 +6,7 @@ import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/link.dart';
 
 class AuthenticationPage extends GetWidget<AuthController> {
   // const AuthenticationPage({Key key}) : super(key: key);
@@ -117,13 +118,19 @@ class AuthenticationPage extends GetWidget<AuthController> {
               SizedBox(
                 height: 15,
               ),
-              RichText(
-                  text: TextSpan(children: [
-                TextSpan(text: "Do not have admin credentials? "),
-                TextSpan(
-                    text: "Request Credentials! ",
-                    style: TextStyle(color: active))
-              ]))
+              // RichText(
+              //     text: TextSpan(children: [
+              //   TextSpan(text: "Do not have admin credentials? "),
+              //   TextSpan(
+              //       text: "Request Credentials! ",
+              //       style: TextStyle(color: active))
+              // ])),
+              Link(
+                  uri: Uri.parse("https://repaierpanda.wasap.my"),
+                  target: LinkTarget.blank,
+                  builder: (context, followLink) => ElevatedButton(
+                      onPressed: followLink,
+                      child: Text('Request for Admin crediential'))),
             ],
           ),
         ),
