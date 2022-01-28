@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fallsa_admin/model/userModel.dart';
+import 'package:fallsa_admin/model/usersDetailsModel.dart';
 
 class Database {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -26,5 +27,21 @@ class Database {
       print(e);
       rethrow;
     }
+  }
+
+  Stream<List<UserDetailsModel>> userDetails() {
+    return _firestore
+        .collection("users")
+        .doc()
+        .collection("user")
+        .orderBy("dob", descending: true)
+        .snapshots()
+        .map((QuerySnapshot query) {
+      List<UserDetailsModel> retVal = List();
+      query.docs.forEach((element) {
+        retVal.add(UserDetailsModel.fromDocumentSnapshot(element));
+      });
+      return retVal;
+    });
   }
 }
