@@ -29,19 +29,19 @@ class Database {
     }
   }
 
-  Stream<List<UserDetailsModel>> userDetails() {
-    return _firestore
-        .collection("users")
-        .doc()
-        .collection("user")
-        .orderBy("dob", descending: true)
-        .snapshots()
-        .map((QuerySnapshot query) {
-      List<UserDetailsModel> retVal = List();
-      query.docs.forEach((element) {
-        retVal.add(UserDetailsModel.fromDocumentSnapshot(element));
-      });
-      return retVal;
-    });
-  }
+  // Stream<List<UserDetailsModel>> userDetails() {
+  //   return _firestore
+  //       .collection("users")
+  //       .doc()
+  //       .collection("user")
+  //       .orderBy("dob", descending: true)
+  //       .snapshots()
+  //       .map((QuerySnapshot query) {
+  //     List<UserDetailsModel> retVal = List();
+  //     query.docs.forEach((element) {
+  //       retVal.add(UserDetailsModel.fromDocumentSnapshot(element));
+  //     });
+  //     return retVal;
+  //   });
+  // }
 }
