@@ -1,10 +1,14 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:fallsa_admin/constants/style.dart';
+import 'package:fallsa_admin/controllers/usersDetailsController.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UsersTable extends StatelessWidget {
-  const UsersTable({Key key}) : super(key: key);
+  // const UsersTable({Key key}) : super(key: key);
+  final UsersDetailsController userController =
+      Get.put(UsersDetailsController());
 
   @override
   Widget build(BuildContext context) {
@@ -42,31 +46,28 @@ class UsersTable extends StatelessWidget {
             ),
           ],
           rows: List<DataRow>.generate(
-              50,
+              userController.userDetails.length,
               (index) => DataRow(cells: [
-                    DataCell(CustomText(text: "Dewan Ahmed Muhtasim")),
-                    DataCell(CustomText(text: "12345678911")),
+                    DataCell(CustomText(
+                        text: userController.userDetails[index].name)),
+                    DataCell(
+                        CustomText(text: userController.userDetails[index].ic)),
                     DataCell(Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         CustomText(
-                          text: "12-21-2022",
+                          text: userController.userDetails[index].dob,
                         )
                       ],
                     )),
-                    DataCell(Container(
-                        decoration: BoxDecoration(
-                          color: light,
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: active, width: .5),
-                        ),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                        child: CustomText(
-                          text: "12345678912",
-                          color: active.withOpacity(.7),
-                          weight: FontWeight.bold,
-                        ))),
+                    DataCell(Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomText(
+                          text: userController.userDetails[index].number,
+                        )
+                      ],
+                    )),
                   ]))),
     );
   }
