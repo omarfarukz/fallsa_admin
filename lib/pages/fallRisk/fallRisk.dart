@@ -1,13 +1,13 @@
 import 'package:fallsa_admin/constants/controllers.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
-import 'package:fallsa_admin/pages/users/widgets/downloadUsers.dart';
-import 'package:fallsa_admin/pages/users/widgets/usersTable.dart';
+import 'package:fallsa_admin/pages/fallRisk/widgets/downloadFallRisk.dart';
+import 'package:fallsa_admin/pages/fallRisk/widgets/fallRisk_table.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class UserPage extends StatelessWidget {
-  const UserPage({Key key}) : super(key: key);
+class FallRiskPage extends StatelessWidget {
+  const FallRiskPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,17 @@ class UserPage extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              DownloadUsers(),
+              DownloadFallRisk(),
             ],
           ),
+        ),
+        SizedBox(
+          height: 8,
         ),
         Expanded(
           child: ListView(
             children: [
-              UsersTable(),
+              FallRiskTable(),
             ],
           ),
         ),

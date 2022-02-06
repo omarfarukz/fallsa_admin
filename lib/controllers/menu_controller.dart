@@ -25,8 +25,13 @@ class MenuController extends GetxController {
         return _customIcon(Icons.trending_up, itemName);
       case UsersPageDisplayName:
         return _customIcon(Icons.people, itemName);
-      case UsersDataPageDisplayName:
-        return _customIcon(Icons.people_sharp, itemName);
+      case FallRIskDisplayName:
+        return _customIcon(Icons.flash_off, itemName);
+      case StrengthTestDisplayName:
+        return _customIcon(Icons.power, itemName);
+      case QuizDisplayName:
+        return _customIcon(Icons.cast_for_education, itemName);
+
       case AuthenticationPageDisplayName:
         return _customIcon(Icons.exit_to_app, itemName);
       default:

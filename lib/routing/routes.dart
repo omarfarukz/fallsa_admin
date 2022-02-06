@@ -4,8 +4,12 @@ const OverViewPageDisplayName = "Overview";
 const OverViewPageRoute = "/overview";
 const UsersPageDisplayName = "Users";
 const UsersPageRoute = "/users";
-const UsersDataPageDisplayName = "User Data";
-const UsersDataPageRoute = "/userdata";
+const FallRIskDisplayName = "Fall Risk";
+const FallRIskPageRoute = "/fallrisk";
+const StrengthTestDisplayName = "Strength Test";
+const StrengthTestPageRoute = "/strength";
+const QuizDisplayName = "Quiz Result";
+const QuizPageRoute = "/quiz";
 const AuthenticationPageDisplayName = "Log Out";
 const AuthenticationPageRoute = "/authentication";
 
@@ -26,8 +30,16 @@ List<MenuItem> sideMenueItems = [
     UsersPageRoute,
   ),
   MenuItem(
-    UsersDataPageDisplayName,
-    UsersDataPageRoute,
+    FallRIskDisplayName,
+    FallRIskPageRoute,
+  ),
+  MenuItem(
+    StrengthTestDisplayName,
+    StrengthTestPageRoute,
+  ),
+  MenuItem(
+    QuizDisplayName,
+    QuizPageRoute,
   ),
   MenuItem(
     AuthenticationPageDisplayName,

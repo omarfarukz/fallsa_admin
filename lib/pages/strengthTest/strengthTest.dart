@@ -1,13 +1,13 @@
 import 'package:fallsa_admin/constants/controllers.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
-import 'package:fallsa_admin/pages/usersData/widgets/users_data_table.dart';
-
+import 'package:fallsa_admin/pages/strengthTest/widgets/downloadST.dart';
+import 'package:fallsa_admin/pages/strengthTest/widgets/strengthTestTable.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class UsersDataPage extends StatelessWidget {
-  const UsersDataPage({Key key}) : super(key: key);
+class StrengthTestPage extends StatelessWidget {
+  const StrengthTestPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class UsersDataPage extends StatelessWidget {
       children: [
         Obx(
           () => Row(
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.only(
@@ -24,17 +25,27 @@ class UsersDataPage extends StatelessWidget {
                   size: 24,
                   weight: FontWeight.bold,
                 ),
-              )
+              ),
+              SizedBox(
+                width: 8,
+              ),
+              DownloadST(),
             ],
           ),
+        ),
+        SizedBox(
+          height: 8,
         ),
         Expanded(
           child: ListView(
             children: [
-              UsersDataTable(),
+              StrengthTestTable(),
             ],
           ),
         ),
+        // Center(
+        //   child: Text('Strength Test'),
+        // )
       ],
     );
   }

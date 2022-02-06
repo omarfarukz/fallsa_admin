@@ -59,7 +59,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           ),
 
           CustomText(
-            text: "Omar Faruk",
+            text: "Admin Panel",
             color: lightGrey,
           ),
           SizedBox(
