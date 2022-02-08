@@ -26,7 +26,7 @@ class StrengthTestTable extends StatelessWidget {
               boxShadow: kElevationToShadow[6],
             ),
             child: TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: InputBorder.none,
                   contentPadding:
                       EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),

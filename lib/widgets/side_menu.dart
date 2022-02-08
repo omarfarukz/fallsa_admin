@@ -1,5 +1,6 @@
 import 'package:fallsa_admin/constants/controllers.dart';
 import 'package:fallsa_admin/constants/style.dart';
+import 'package:fallsa_admin/controllers/authController.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
 import 'package:fallsa_admin/pages/authentication/authentication.dart';
 import 'package:fallsa_admin/routing/routes.dart';
@@ -9,7 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SideMenu extends StatelessWidget {
-  const SideMenu({Key key}) : super(key: key);
+  SideMenu({Key key}) : super(key: key);
+  AuthController authController = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +69,7 @@ class SideMenu extends StatelessWidget {
 
                           menuController
                               .changActiveitemTo(OverViewPageDisplayName);
+                          authController.signOut();
                           Get.offAll(AuthenticationPageRoute);
                         }
                         if (!menuController.isActive(item.name)) {

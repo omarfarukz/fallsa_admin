@@ -2,6 +2,7 @@ import 'package:fallsa_admin/controllers/userController.dart';
 import 'package:fallsa_admin/model/userModel.dart';
 import 'package:fallsa_admin/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:get/get.dart';
 
@@ -52,6 +53,18 @@ class AuthController extends GetxController {
     } catch (e) {
       Get.snackbar(
         "Error signing in",
+        e.message,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+  }
+
+  void signOut() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      Get.snackbar(
+        "Error Sign Out",
         e.message,
         snackPosition: SnackPosition.BOTTOM,
       );

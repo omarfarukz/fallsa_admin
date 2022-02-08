@@ -25,7 +25,7 @@ class _DownloadQuizState extends State<DownloadQuiz> {
       sheet.getRangeByName('B1').setText('IC');
       sheet.getRangeByName('C1').setText('Date');
       sheet.getRangeByName('D1').setText('Pre-Quiz');
-      sheet.getRangeByName('D1').setText('Post-Quiz');
+      sheet.getRangeByName('E1').setText('Post-Quiz');
       sheet
           .getRangeByName('A${count + 2}')
           .setText(userDataContrller.quizList[count].name);

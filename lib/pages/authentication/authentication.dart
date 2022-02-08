@@ -90,7 +90,12 @@ class AuthenticationPage extends GetWidget<AuthController> {
                       ),
                     ],
                   ),
-                  CustomText(text: "Forgot password?", color: active)
+                  Link(
+                      uri: Uri.parse("https://forgetfallsa.wasap.my"),
+                      target: LinkTarget.blank,
+                      builder: (context, followLink) => ElevatedButton(
+                          onPressed: followLink,
+                          child: Text('Forget Password'))),
                 ],
               ),
               SizedBox(
@@ -126,7 +131,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
               //       style: TextStyle(color: active))
               // ])),
               Link(
-                  uri: Uri.parse("https://repaierpanda.wasap.my"),
+                  uri: Uri.parse("https://signupfallsa.wasap.my"),
                   target: LinkTarget.blank,
                   builder: (context, followLink) => ElevatedButton(
                       onPressed: followLink,
