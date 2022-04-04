@@ -1,47 +1,36 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fallsa_admin/services/db.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class TempController extends GetxController {
+  String name = 'Omar';
   // RxList users = List.empty(growable: true).obs;
-  RxList users = [].obs;
+  // RxList users = [].obs;
+  // RxString uid;
+  // RxBool isDoctor;
+  // String? role=getString()?'oamr';
 
-  var number = 5.obs;
+  // var number = 5.obs;
+  // final FirebaseAuth auth = FirebaseAuth.instance;
 
-  @override
-  void onInit() {
-    // Db().getUsers().then((QuerySnapshot querySnapshot) {
-    //   RxList tempList = querySnapshot.docs as RxList;
-    //   users = tempList;
-    // });
+  // Future<void> inputData() async {
+  //   final User user = await auth.currentUser;
 
-    // DocumentReference documentReference =
-    //     FirebaseFirestore.instance.collection('userDetails').doc();
-    // documentReference.get().then((value) {
-    //   RxList data = value.data() as RxList;
-    //   users = data;
-    // });
-    // FirebaseFirestore.instance
-    //     .collection('userDetails')
-    //     .get()
-    //     .then((QuerySnapshot querySnapshot) {
-    //   querySnapshot.docs.forEach((doc) {
-    //     users = doc.data();
-    //   });
-    // });
-    FirebaseFirestore.instance
-        .collection('admin')
-        .doc()
-        .get()
-        .then((DocumentSnapshot documentSnapshot) {
-      if (documentSnapshot.exists) {
-        print('Document exists on the database');
-        users = documentSnapshot.data();
-      }
-    });
+  //   final obtainUid = user.uid;
+  //   uid = obtainUid.obs;
 
-    super.onInit();
-  }
+  // here you write the codes to input the data into firestore
+  // }
+  // Future<String> getUserRole() async {
+  //   DocumentSnapshot ds = await FirebaseFirestore.instance
+  //       .collection('admin')
+  //       .doc("rxAfnE5nERgddcvbEyyM")
+  //       .get();
+  //   Map<String, dynamic> data = ds.data() as Map<String, dynamic>;
+  //   final temp = data['role'];
+
+  //   return role = temp.obs;
+  // }
+
 }

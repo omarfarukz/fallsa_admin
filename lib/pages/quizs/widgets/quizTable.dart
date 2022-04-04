@@ -4,6 +4,7 @@ import 'package:fallsa_admin/controllers/userDataController.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class QuizTable extends StatelessWidget {
   // QuizTable({Key key}) : super(key: key);
@@ -91,9 +92,10 @@ class QuizTable extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           CustomText(
-                            text: userDataContrller.quizList[index].date
-                                .toDate()
-                                .toString(),
+                            // text: DateFormat('yyyy-MM-dd').format(
+                            //     userDataContrller.quizList[index].date
+                            //         .toDate())),
+                            text: 'Date',
                           )
                         ],
                       )),

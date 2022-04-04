@@ -6,6 +6,6 @@ class SmallScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return localNavigator();
+    return Expanded(child: localNavigator());
   }
 }

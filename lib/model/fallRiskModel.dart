@@ -3,10 +3,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FallRiskModel {
   String name;
   String ic;
+  String dUid;
   Timestamp date;
   String risk;
   int score;
-  FallRiskModel({this.name, this.ic, this.date, this.risk, this.score});
+  FallRiskModel(
+      {this.name, this.ic, this.date, this.risk, this.score, this.dUid});
   FallRiskModel.fromMap(
     DocumentSnapshot snapshot,
   ) {
@@ -15,5 +17,6 @@ class FallRiskModel {
     date = snapshot['dateTime'];
     risk = snapshot['risk'];
     score = snapshot['score'];
+    dUid = snapshot['dUid'];
   }
 }

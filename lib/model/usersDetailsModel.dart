@@ -5,10 +5,11 @@ class UserDetailsModel {
   String ic;
   String dob;
   String number;
-  // String gander;
-  // String adress1;
-  // String adress2;
-  // String education;
+  String gender;
+  String adress1;
+  String adress2;
+  String education;
+  String uid;
   // String postcode;
   // String state;
   // String phonenumber;
@@ -18,10 +19,11 @@ class UserDetailsModel {
     this.ic,
     this.number,
     this.dob,
-    // this.adress1,
-    // this.adress2,
-    // this.education,
-    // this.gander,
+    this.adress1,
+    this.adress2,
+    this.education,
+    this.gender,
+    this.uid,
     // this.phonenumber,
     // this.postcode,
     // this.state,
@@ -35,10 +37,12 @@ class UserDetailsModel {
     dob = snapshot["dob"];
     number = snapshot["number"];
     // phonenumber = snapshot["phonenumber"];
-    // gander = snapshot["gander"];
-    // adress1 = snapshot["adress1"];
-    // adress2 = snapshot["adress2"];
-    // education = snapshot["education"];
+    gender = snapshot["gander"];
+    adress1 = snapshot["adress1"];
+    adress2 = snapshot["adress2"];
+    education = snapshot["education"];
+    uid = snapshot['uid'];
+
     // postcode = snapshot["postcode"];
     // state = snapshot["state"];
   }

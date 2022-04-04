@@ -8,6 +8,7 @@ import 'package:fallsa_admin/pages/strengthTest/widgets/downloadST.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class StrengthTestTable extends StatelessWidget {
   // final UserDataContrller _ctrl = Get.put(UserDataContrller());
@@ -91,10 +92,9 @@ class StrengthTestTable extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           CustomText(
-                            text: userDataContrller.strengthList[index].date
-                                .toDate()
-                                .toString(),
-                          )
+                              text: DateFormat('yyyy-MM-dd').format(
+                                  userDataContrller.strengthList[index].date
+                                      .toDate())),
                         ],
                       )),
                       DataCell(CustomText(

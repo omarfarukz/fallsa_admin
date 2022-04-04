@@ -6,12 +6,16 @@ import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:universal_html/js.dart';
 import 'package:url_launcher/link.dart';
 
 class AuthenticationPage extends GetWidget<AuthController> {
   // const AuthenticationPage({Key key}) : super(key: key);
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  // _showDialog(){
+  //   showDialog(context: context, builder: (context)=>);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +95,17 @@ class AuthenticationPage extends GetWidget<AuthController> {
                     ],
                   ),
                   Link(
-                      uri: Uri.parse("https://forgetfallsa.wasap.my"),
-                      target: LinkTarget.blank,
-                      builder: (context, followLink) => ElevatedButton(
-                          onPressed: followLink,
-                          child: Text('Forget Password'))),
+                    uri: Uri.parse("https://forgetfallsa.wasap.my"),
+                    target: LinkTarget.blank,
+                    builder: (context, followLink) => ElevatedButton(
+                      onPressed: followLink,
+                      child: Text('Forget Password'),
+                    ),
+                  ),
+                  // ElevatedButton(
+                  //     onPressed:
+                  //     child: Text('Forget Password'),
+                  //   ),
                 ],
               ),
               SizedBox(

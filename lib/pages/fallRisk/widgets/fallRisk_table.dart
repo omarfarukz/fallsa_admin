@@ -7,14 +7,21 @@ import 'package:fallsa_admin/controllers/userDataController.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class FallRiskTable extends StatelessWidget {
   // final UserDataContrller userDataContrller = Get.put(UserDataContrller());
   bool isLoading;
+  final bool isDoctor = true;
+  // final String isDoctor = '12345';
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return GetBuilder<UserDataContrller>(builder: (userDataContrller) {
+      final list = isDoctor
+          ? userDataContrller.dFallRiskList
+          : userDataContrller.fallRiskList;
       return Column(
         children: [
           Container(
@@ -31,10 +38,18 @@ class FallRiskTable extends StatelessWidget {
                       EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),
                   hintText: "Search here using ic number or name"),
               onChanged: (value) {
-                userDataContrller.searchFallRisk(value);
+                if (isDoctor) {
+                  userDataContrller.searchDFallRisk(value);
+                } else {
+                  userDataContrller.searchFallRisk(value);
+                }
               },
               onSubmitted: (value) {
-                userDataContrller.searchFallRisk(value);
+                if (isDoctor) {
+                  userDataContrller.searchDFallRisk(value);
+                } else {
+                  userDataContrller.searchFallRisk(value);
+                }
               },
             ),
           ),
@@ -80,31 +95,24 @@ class FallRiskTable extends StatelessWidget {
                   ),
                 ],
                 rows: List<DataRow>.generate(
-                  userDataContrller.fallRiskList.length,
+                  list.length,
                   (index) => DataRow(
                     cells: [
                       DataCell(
-                        CustomText(
-                            text: userDataContrller.fallRiskList[index].name),
+                        CustomText(text: list[index].name),
                       ),
-                      DataCell(CustomText(
-                          text: userDataContrller.fallRiskList[index].ic)),
+                      DataCell(CustomText(text: list[index].ic)),
                       DataCell(Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           CustomText(
-                            text: userDataContrller.fallRiskList[index].date
-                                .toDate()
-                                .toString(),
+                            text: DateFormat('yyyy-MM-dd')
+                                .format(list[index].date.toDate()),
                           )
                         ],
                       )),
-                      DataCell(CustomText(
-                          text: userDataContrller.fallRiskList[index].score
-                              .toString())),
-                      DataCell(CustomText(
-                          text: userDataContrller.fallRiskList[index].risk
-                              .toString())),
+                      DataCell(CustomText(text: list[index].score.toString())),
+                      DataCell(CustomText(text: list[index].risk.toString())),
                     ],
                   ),
                 ),

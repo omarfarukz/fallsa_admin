@@ -44,6 +44,8 @@ dependencies:
   universal_html: ^2.0.8
   firebase_auth: ^3.3.5
   syncfusion_flutter_xlsio: ^19.4.48-beta
+  syncfusion_flutter_pdf: ^19.4.56-beta
+  intl: ^0.17.0
 
 
 dev_dependencies:
