@@ -28,7 +28,6 @@ class FallRiskPage extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              DownloadFallRisk(),
             ],
           ),
         ),

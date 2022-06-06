@@ -35,11 +35,11 @@ class SideMenu extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(right: 12),
-                      child: Image.asset("assets/icon/logo.png"),
+                      // child: Image.asset("assets/icon/logo.png"),
                     ),
                     Flexible(
                       child: CustomText(
-                        text: "Dash",
+                        text: "Dashboard",
                         size: 20,
                         weight: FontWeight.bold,
                         color: active,
@@ -50,6 +50,7 @@ class SideMenu extends StatelessWidget {
                     ),
                   ],
                 ),
+               
               ],
             ),
           SizedBox(

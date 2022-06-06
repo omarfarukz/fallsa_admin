@@ -31,6 +31,8 @@ class MenuController extends GetxController {
         return _customIcon(Icons.power, itemName);
       case QuizDisplayName:
         return _customIcon(Icons.cast_for_education, itemName);
+      case SuperAdminPageDisplayName:
+        return _customIcon(Icons.admin_panel_settings, itemName);
 
       case AuthenticationPageDisplayName:
         return _customIcon(Icons.exit_to_app, itemName);

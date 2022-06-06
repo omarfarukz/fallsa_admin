@@ -29,7 +29,7 @@ class StrengthTestPage extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              DownloadST(),
+            
             ],
           ),
         ),

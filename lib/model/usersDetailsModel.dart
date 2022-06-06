@@ -10,6 +10,7 @@ class UserDetailsModel {
   String adress2;
   String education;
   String uid;
+  String dUid;
   // String postcode;
   // String state;
   // String phonenumber;
@@ -24,6 +25,7 @@ class UserDetailsModel {
     this.education,
     this.gender,
     this.uid,
+    this.dUid,
     // this.phonenumber,
     // this.postcode,
     // this.state,
@@ -42,6 +44,7 @@ class UserDetailsModel {
     adress2 = snapshot["adress2"];
     education = snapshot["education"];
     uid = snapshot['uid'];
+    dUid = snapshot['dUid'];
 
     // postcode = snapshot["postcode"];
     // state = snapshot["state"];

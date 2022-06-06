@@ -59,6 +59,22 @@ class AuthController extends GetxController {
     }
   }
 
+  void signup(String email, String password) async {
+    try {
+      UserCredential _authResult = await _auth.createUserWithEmailAndPassword(
+          email: email.trim(), password: password);
+
+      Get.find<UserController>().user =
+          await Database().getUser(_authResult.user.uid);
+    } catch (e) {
+      Get.snackbar(
+        "Error signing in",
+        e.message,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+  }
+
   void signOut() async {
     try {
       await _auth.signOut();

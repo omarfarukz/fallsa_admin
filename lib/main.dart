@@ -1,15 +1,9 @@
 import 'package:fallsa_admin/controllers/bindings/authBinding.dart';
 import 'package:fallsa_admin/controllers/menu_controller.dart';
 import 'package:fallsa_admin/controllers/navigation_controller.dart';
-
-import 'package:fallsa_admin/pages/404/error_page.dart';
-
-import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/utils/root.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +13,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // ignore: prefer_const_constructors_in_immutables
   MyApp({Key key}) : super(key: key);
 
   @override
@@ -27,6 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // initialRoute: AuthenticationPageRoute,
       initialBinding: AuthBinding(),
+
       // unknownRoute: GetPage(
       //     name: "/not-found",
       //     page: () => PageNotFound(),
@@ -41,7 +35,7 @@ class MyApp extends StatelessWidget {
       //       name: AuthenticationPageRoute, page: () => AuthenticationPage()),
       // ],
       // debugShowCheckedModeBanner: false,
-      // title: "Dashboard",
+      title: "Dashboard",
       // theme: ThemeData(
       //     scaffoldBackgroundColor: Colors.white,
       //     textTheme:

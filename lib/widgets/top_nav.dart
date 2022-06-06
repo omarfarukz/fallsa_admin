@@ -1,7 +1,11 @@
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
+import 'package:fallsa_admin/pages/authentication/admin.dart';
+import 'package:fallsa_admin/widgets/custom_drop_down.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+
+final emailController = TextEditingController();
 
 AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
@@ -38,7 +42,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             child: Container(),
           ),
           IconButton(
-            onPressed: () {},
+            // onPressed: () {},
             icon: Icon(
               Icons.settings,
               color: dark.withOpacity(.7),

@@ -7,6 +7,8 @@ import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 import 'package:universal_html/html.dart' show AnchorElement;
 import 'dart:convert';
 
+import '../../../widgets/cText.dart';
+
 class DownloadUsers extends StatefulWidget {
   @override
   State<DownloadUsers> createState() => _DownloadUsersState();
@@ -56,7 +58,7 @@ class _DownloadUsersState extends State<DownloadUsers> {
   Widget build(BuildContext context) {
     return Center(
         child: ElevatedButton(
-      child: Text("Download"),
+      child: CText(text:"Download"),
       onPressed: createExcel,
     ));
   }

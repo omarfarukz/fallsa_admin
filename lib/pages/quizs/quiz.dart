@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class QuizPage extends StatelessWidget {
-  const QuizPage({Key key}) : super(key: key);
+  QuizPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class QuizPage extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              DownloadQuiz(),
+             
             ],
           ),
         ),

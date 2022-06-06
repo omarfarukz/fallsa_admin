@@ -10,6 +10,8 @@ const StrengthTestDisplayName = "Strength Test";
 const StrengthTestPageRoute = "/strength";
 const QuizDisplayName = "Quiz Result";
 const QuizPageRoute = "/quiz";
+const SuperAdminPageDisplayName = "Super Admin";
+const SuperAdminPageRoute = "/superadmin";
 const AuthenticationPageDisplayName = "Log Out";
 const AuthenticationPageRoute = "/authentication";
 
@@ -40,6 +42,10 @@ List<MenuItem> sideMenueItems = [
   MenuItem(
     QuizDisplayName,
     QuizPageRoute,
+  ),
+  MenuItem(
+    SuperAdminPageDisplayName,
+    SuperAdminPageRoute,
   ),
   MenuItem(
     AuthenticationPageDisplayName,

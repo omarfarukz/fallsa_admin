@@ -57,7 +57,7 @@ class HorizontalMenuItem extends StatelessWidget {
                     Flexible(
                         child: CustomText(
                       text: itemName,
-                      color: dark,
+                      color: Colors.redAccent,
                       size: 18,
                       weight: FontWeight.bold,
                     ))

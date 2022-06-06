@@ -28,7 +28,6 @@ class UserPage extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              DownloadUsers(),
             ],
           ),
         ),

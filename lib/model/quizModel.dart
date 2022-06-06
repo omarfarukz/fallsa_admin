@@ -7,6 +7,8 @@ class QuizModel {
   String preCorrect;
   String preWrong;
   String postCorrect;
+  String dUid;
+
   // String postWrong;
 
   QuizModel({
@@ -16,6 +18,7 @@ class QuizModel {
     this.postCorrect,
     // this.postWrong,
     this.preCorrect,
+    this.dUid,
     // this.preWrong,
   });
   QuizModel.fromMap(
@@ -27,6 +30,7 @@ class QuizModel {
     postCorrect = snapshot['postCorrect'];
     // // postWrong = snapshot['postWrong'];
     preCorrect = snapshot['preCorrect'];
+    dUid = snapshot['dUid'];
     // preWrong = snapshot['preWrong'];
   }
 }

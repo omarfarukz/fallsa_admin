@@ -1,6 +1,7 @@
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/controllers/authController.dart';
 import 'package:fallsa_admin/layout.dart';
+import 'package:fallsa_admin/pages/authentication/signup.dart';
 import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -144,7 +145,13 @@ class AuthenticationPage extends GetWidget<AuthController> {
                   uri: Uri.parse("https://signupfallsa.wasap.my"),
                   target: LinkTarget.blank,
                   builder: (context, followLink) => ElevatedButton(
-                      onPressed: followLink,
+                      onPressed: () {
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        Get.offAll(SignUpScreen());
+                        //         builder: (context) => SignUpScreen()));
+                      },
                       child: Text('Request for Admin crediential'))),
             ],
           ),
