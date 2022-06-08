@@ -1,9 +1,7 @@
+
 import 'package:fallsa_admin/controllers/userController.dart';
-import 'package:fallsa_admin/model/userModel.dart';
 import 'package:fallsa_admin/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
@@ -13,7 +11,6 @@ class AuthController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     _firebaseUser.bindStream(_auth.authStateChanges());
     super.onInit();
   }

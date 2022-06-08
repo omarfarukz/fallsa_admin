@@ -59,7 +59,7 @@ class _DownloadQuizState extends State<DownloadQuiz> {
   Widget build(BuildContext context) {
     return Center(
         child: ElevatedButton(
-      child: CText(text: "Download"),
+      child: const CText(text: "Download"),
       onPressed: createExcel,
     ));
   }

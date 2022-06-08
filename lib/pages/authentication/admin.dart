@@ -100,40 +100,61 @@ class AdminScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () async {
-                        if (role.text == "Doctor") {
-                          isDoctor = true;
-                        } else if (role.text == "Researcher") {
-                          isDoctor = false;
-                        }
-                        if (doctorAccessController.text == "Active") {
-                          isAccess = true;
-                        } else if (doctorAccessController.text == "Denied") {
-                          isAccess = false;
-                        }
-                        // print(isDoctor);
-                        // print(isAccess);
                         if (doctorIDController.text.isNotEmpty) {
-                          Future.delayed(Duration(milliseconds: 1), () async {
-                            try {
-                              var collection = FirebaseFirestore.instance
-                                  .collection('admin');
-                              await collection
-                                  .doc(doctorIDController.text)
-                                  .set({
-                                "isAccess": isAccess, //initially isAccess false
-                                "isDoctor": isDoctor //initially isDcotor true
-                              }, SetOptions(merge: true));
-                              var snackBar =
-                                  SnackBar(content: Text("Update Sucuessfull"));
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
-                            } catch (e) {
-                              var snackBar =
-                                  SnackBar(content: Text(e.toString()));
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
+                          try {
+                            if (role.text == "Doctor") {
+                              isDoctor = true;
+                            } else if (role.text == "Researcher") {
+                              isDoctor = false;
                             }
-                          });
+                            if (doctorAccessController.text == "Active") {
+                              isAccess = true;
+                            } else if (doctorAccessController.text ==
+                                "Denied") {
+                              isAccess = false;
+                            }
+                            // print(isDoctor);
+                            // print(isAccess);
+                            if (doctorIDController.text.isNotEmpty) {
+                              Future.delayed(const Duration(milliseconds: 1),
+                                  () async {
+                                try {
+                                  var collection = FirebaseFirestore.instance
+                                      .collection('admin');
+                                  await collection
+                                      .doc(doctorIDController.text)
+                                      .update(
+                                    {
+                                      "isAccess":
+                                          isAccess, //initially isAccess false
+                                      "isDoctor":
+                                          isDoctor, //initially isDcotor true
+                                    },
+                                  );
+                                  var snackBar = const SnackBar(
+                                      content:
+                                          Text("Update Sucuessfull"));
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
+                                  doctorIDController.clear();
+                                } catch (e) {
+                                  var snackBar =
+                                      SnackBar(content: Text(e.toString()));
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
+                                }
+                              });
+                            }
+                          } catch (e) {
+                            var snackBar =
+                                SnackBar(content: Text(e.toString()));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
+                        } else {
+                          var snackBar =
+                              const SnackBar(content: Text("Please provide the UID"));
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       },
                       child: Container(
@@ -142,8 +163,8 @@ class AdminScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20)),
                         alignment: Alignment.center,
                         width: double.maxFinite,
-                        padding: EdgeInsets.symmetric(vertical: 16),
-                        child: CustomText(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: const CustomText(
                           text: "Update",
                           color: Colors.white,
                         ),

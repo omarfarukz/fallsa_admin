@@ -58,7 +58,7 @@ class _DownloadFallRiskState extends State<DownloadFallRisk> {
   Widget build(BuildContext context) {
     return Center(
         child: ElevatedButton(
-      child: CText(text:"Download"),
+      child: const CText(text:"Download"),
       onPressed: createExcel,
     ));
   }

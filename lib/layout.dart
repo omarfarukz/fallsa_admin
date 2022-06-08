@@ -1,6 +1,5 @@
 import 'package:fallsa_admin/helpers/local_navigator.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
-import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/widgets/large_screen.dart';
 import 'package:fallsa_admin/widgets/side_menu.dart';
 
@@ -21,10 +20,10 @@ class SiteLayout extends StatelessWidget {
         child: SideMenu(),
       ),
       body: ResponsiveWidget(
-        largeScreen: LargeScreen(),
+        largeScreen: const LargeScreen(),
         // smallScreen: SmallScreen(),
         smallScreen: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: localNavigator(),
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:fallsa_admin/constants/controllers.dart';
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/controllers/authController.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
-import 'package:fallsa_admin/pages/authentication/authentication.dart';
 import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:fallsa_admin/widgets/side_menu_item.dart';
@@ -25,7 +24,7 @@ class SideMenu extends StatelessWidget {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Row(
@@ -33,8 +32,8 @@ class SideMenu extends StatelessWidget {
                     SizedBox(
                       width: _width / 48,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 12),
+                    const Padding(
+                      padding:  EdgeInsets.only(right: 12),
                       // child: Image.asset("assets/icon/logo.png"),
                     ),
                     Flexible(
@@ -53,7 +52,7 @@ class SideMenu extends StatelessWidget {
                
               ],
             ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Divider(
@@ -75,8 +74,9 @@ class SideMenu extends StatelessWidget {
                         }
                         if (!menuController.isActive(item.name)) {
                           menuController.changActiveitemTo(item.name);
-                          if (ResponsiveWidget.isSmallScreen(context))
+                          if (ResponsiveWidget.isSmallScreen(context)) {
                             Get.back();
+                          }
                           //go to item name route
                           navigationController.navigateTo(item.route);
                         }

@@ -3,7 +3,7 @@ import 'package:fallsa_admin/pages/overview/widgets/info_card_small.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'info_cards.dart';
+
 
 class OverViewCardsSmallScreen extends StatelessWidget {
   OverViewCardsSmallScreen({Key key}) : super(key: key);
@@ -12,7 +12,7 @@ class OverViewCardsSmallScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
     return GetBuilder<UserDataContrller>(builder: (userDataContrller) {
-      return Container(
+      return SizedBox(
         height: 400,
         child: Column(children: [
           InfoCardSamll(

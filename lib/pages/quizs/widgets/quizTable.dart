@@ -28,7 +28,7 @@ class QuizTable extends StatelessWidget {
           ? Column(
               children: [
                 userDataContrller.isDoctor
-                    ? CText(text:"This is the Doctor's View")
+                    ? const CText(text:"This is the Doctor's View")
                     : Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Row(
@@ -85,14 +85,14 @@ class QuizTable extends StatelessWidget {
                           Border.all(color: active.withOpacity(.4), width: .5),
                       boxShadow: [
                         BoxShadow(
-                            offset: Offset(0, 6),
+                            offset: const Offset(0, 6),
                             color: lightGrey.withOpacity(.1),
                             blurRadius: 12)
                       ],
                       borderRadius: BorderRadius.circular(8),
                     ),
                     padding: const EdgeInsets.all(16),
-                    margin: EdgeInsets.only(bottom: 30),
+                    margin: const EdgeInsets.only(bottom: 30),
                     child: DataTable2(
                       columnSpacing: 12,
                       horizontalMargin: 12,
@@ -138,11 +138,11 @@ class QuizTable extends StatelessWidget {
                               //Add rows to grid
                               PdfGridRow row1 = grid.rows.add();
                               row1.cells[0].value = ' Full Name';
-                              row1.cells[1].value = '${list[index].name}';
+                              row1.cells[1].value = list[index].name;
 
                               PdfGridRow row2 = grid.rows.add();
                               row2.cells[0].value = ' Petaint Ic';
-                              row2.cells[1].value = '${list[index].ic}';
+                              row2.cells[1].value = list[index].ic;
 
                               PdfGridRow row3 = grid.rows.add();
                               row3.cells[0].value = ' Date Of Birth';
@@ -150,12 +150,12 @@ class QuizTable extends StatelessWidget {
                                   .format(list[index].date.toDate());
                               PdfGridRow row4 = grid.rows.add();
                               row4.cells[0].value = ' Pre Quiz';
-                              row4.cells[1].value = '${list[index].preCorrect}';
+                              row4.cells[1].value = list[index].preCorrect;
 
                               PdfGridRow row5 = grid.rows.add();
                               row5.cells[0].value = ' Post Quiz';
                               row5.cells[1].value =
-                                  '${list[index].postCorrect}';
+                                  list[index].postCorrect;
 
                               //Set the width
                               grid.columns[0].width = 100;

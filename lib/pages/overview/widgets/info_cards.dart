@@ -1,9 +1,8 @@
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class InfoCard extends StatelessWidget {
-  InfoCard({
+  const InfoCard({
     Key key,
     this.title,
     this.value,
@@ -29,7 +28,7 @@ class InfoCard extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                  offset: Offset(0, 6),
+                  offset: const Offset(0, 6),
                   color: lightGrey.withOpacity(0.1),
                   blurRadius: 12),
             ],

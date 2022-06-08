@@ -25,7 +25,7 @@ class UserPage extends StatelessWidget {
                   weight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
             ],

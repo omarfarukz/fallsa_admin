@@ -3,12 +3,10 @@ import 'dart:convert';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/controllers/userDataController.dart';
-import 'package:fallsa_admin/pages/quizs/widgets/downloadQuiz.dart';
 import 'package:fallsa_admin/pages/users/widgets/downloadUsers.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:universal_html/html.dart' hide Text;
 
@@ -144,32 +142,32 @@ class UsersTable extends StatelessWidget {
                                 //Add rows to grid
                                 PdfGridRow row1 = grid.rows.add();
                                 row1.cells[0].value = ' Full Name';
-                                row1.cells[1].value = '${list[index].name}';
+                                row1.cells[1].value = list[index].name;
 
                                 PdfGridRow row2 = grid.rows.add();
                                 row2.cells[0].value = ' Petaint Ic';
-                                row2.cells[1].value = '${list[index].ic}';
+                                row2.cells[1].value = list[index].ic;
 
                                 PdfGridRow row3 = grid.rows.add();
                                 row3.cells[0].value = ' Date Of Birth';
                                 row3.cells[1].value =
-                                    '${list[index].dob.toString()}';
+                                    list[index].dob.toString();
                                 PdfGridRow row4 = grid.rows.add();
                                 row4.cells[0].value = ' Gender';
-                                row4.cells[1].value = '${list[index].gender}';
+                                row4.cells[1].value = list[index].gender;
 
                                 PdfGridRow row5 = grid.rows.add();
                                 row5.cells[0].value = ' Education';
                                 row5.cells[1].value =
-                                    '${list[index].education}';
+                                    list[index].education;
                                 PdfGridRow row6 = grid.rows.add();
                                 row6.cells[0].value = ' Contact Number';
-                                row6.cells[1].value = '${list[index].number}';
+                                row6.cells[1].value = list[index].number;
                                 PdfGridRow row7 = grid.rows.add();
                                 row7.cells[0].value = ' Adress';
-                                row7.cells[1].value = "${list[index].adress1}" +
+                                row7.cells[1].value = list[index].adress1 +
                                     " " +
-                                    "${list[index].adress2}";
+                                    list[index].adress2;
 
                                 //Set the width
                                 grid.columns[0].width = 100;
@@ -214,9 +212,9 @@ class UsersTable extends StatelessWidget {
                             )),
                             DataCell(CustomText(text: list[index].number)),
                             DataCell(CustomText(
-                                text: "${list[index].adress1}" +
+                                text: list[index].adress1 +
                                     " " +
-                                    "${list[index].adress2}")),
+                                    list[index].adress2)),
                           ],
                         ),
                       ),

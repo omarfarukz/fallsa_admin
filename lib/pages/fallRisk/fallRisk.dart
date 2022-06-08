@@ -1,6 +1,5 @@
 import 'package:fallsa_admin/constants/controllers.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
-import 'package:fallsa_admin/pages/fallRisk/widgets/downloadFallRisk.dart';
 import 'package:fallsa_admin/pages/fallRisk/widgets/fallRisk_table.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +24,13 @@ class FallRiskPage extends StatelessWidget {
                   weight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Expanded(

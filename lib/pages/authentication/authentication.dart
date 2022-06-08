@@ -1,30 +1,25 @@
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/controllers/authController.dart';
-import 'package:fallsa_admin/layout.dart';
+import 'package:fallsa_admin/pages/authentication/reset_password.dart';
 import 'package:fallsa_admin/pages/authentication/signup.dart';
-import 'package:fallsa_admin/routing/routes.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:universal_html/js.dart';
 import 'package:url_launcher/link.dart';
 
 class AuthenticationPage extends GetWidget<AuthController> {
   // const AuthenticationPage({Key key}) : super(key: key);
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  // _showDialog(){
-  //   showDialog(context: context, builder: (context)=>);
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: 400),
-          padding: EdgeInsets.all(24),
+          constraints: const BoxConstraints(maxWidth: 400),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -37,7 +32,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
                   Expanded(child: Container()),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -47,7 +42,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
                           fontSize: 30, fontWeight: FontWeight.bold)),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -58,7 +53,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               TextField(
@@ -69,7 +64,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               TextField(
@@ -81,7 +76,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -90,7 +85,7 @@ class AuthenticationPage extends GetWidget<AuthController> {
                   Row(
                     children: [
                       Checkbox(value: true, onChanged: (value) {}),
-                      CustomText(
+                      const CustomText(
                         text: "Remeber Me",
                       ),
                     ],
@@ -99,17 +94,15 @@ class AuthenticationPage extends GetWidget<AuthController> {
                     uri: Uri.parse("https://forgetfallsa.wasap.my"),
                     target: LinkTarget.blank,
                     builder: (context, followLink) => ElevatedButton(
-                      onPressed: followLink,
-                      child: Text('Forget Password'),
+                      onPressed: () {
+                        Get.offAll(ResetPasswordScreen());
+                      },
+                      child: const Text('Forget Password'),
                     ),
                   ),
-                  // ElevatedButton(
-                  //     onPressed:
-                  //     child: Text('Forget Password'),
-                  //   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               InkWell(
@@ -124,35 +117,24 @@ class AuthenticationPage extends GetWidget<AuthController> {
                       color: active, borderRadius: BorderRadius.circular(20)),
                   alignment: Alignment.center,
                   width: double.maxFinite,
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: CustomText(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: const CustomText(
                     text: "Login",
                     color: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              // RichText(
-              //     text: TextSpan(children: [
-              //   TextSpan(text: "Do not have admin credentials? "),
-              //   TextSpan(
-              //       text: "Request Credentials! ",
-              //       style: TextStyle(color: active))
-              // ])),
               Link(
                   uri: Uri.parse("https://signupfallsa.wasap.my"),
                   target: LinkTarget.blank,
                   builder: (context, followLink) => ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
                         Get.offAll(SignUpScreen());
-                        //         builder: (context) => SignUpScreen()));
                       },
-                      child: Text('Request for Admin crediential'))),
+                      child: const Text('Sign Up as Admin'))),
             ],
           ),
         ),

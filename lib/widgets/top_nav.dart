@@ -1,7 +1,5 @@
 import 'package:fallsa_admin/constants/style.dart';
 import 'package:fallsa_admin/helpers/responsiveness.dart';
-import 'package:fallsa_admin/pages/authentication/admin.dart';
-import 'package:fallsa_admin/widgets/custom_drop_down.dart';
 import 'package:fallsa_admin/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +11,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           ? Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 14),
+                  padding: const EdgeInsets.only(left: 14),
                   child: Image.asset(
                     "assets/icons/logo.png",
                     width: 28,
@@ -25,7 +23,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               onPressed: () {
                 key.currentState.openDrawer();
               },
-              icon: Icon(Icons.menu),
+              icon: const Icon(Icons.menu),
             ),
       elevation: 0,
       title: Row(
@@ -42,23 +40,19 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             child: Container(),
           ),
           IconButton(
-            // onPressed: () {},
+            onPressed: () {},
             icon: Icon(
               Icons.settings,
               color: dark.withOpacity(.7),
             ),
           ),
-          // Stack(
-          //   children: [
-          //     IconButton(onPressed: (){}, icon: Icon(Icons.notifica))
-          //   ],
-          // )
+  
           Container(
             width: 1,
             height: 22,
             color: lightGrey,
           ),
-          SizedBox(
+          const SizedBox(
             width: 24,
           ),
 
@@ -66,7 +60,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             text: "Admin Panel",
             color: lightGrey,
           ),
-          SizedBox(
+          const SizedBox(
             width: 16,
           ),
           Container(
@@ -75,8 +69,8 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               borderRadius: BorderRadius.circular(30),
             ),
             child: Container(
-              padding: EdgeInsets.all(2),
-              margin: EdgeInsets.all(2),
+              padding: const EdgeInsets.all(2),
+              margin: const EdgeInsets.all(2),
               child: CircleAvatar(
                 child: Icon(
                   Icons.person_add_alt_1_outlined,

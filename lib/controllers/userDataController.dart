@@ -60,12 +60,12 @@ class UserDataContrller extends GetxController {
     initaccType();
     initDoctorData();
     initadnminName();
-    print("The UID is : ${user.uid}");
+    // print("The UID is : ${user.uid}");
     Future.delayed(Duration(seconds: 1), () {
       try {
-        print(' The doctor Id: $doctorId');
-        print("The account Type is doctor:  $isDoctor");
-        print("The account Status is active:  $isAcess");
+        // print(' The doctor Id: $doctorId');
+        // print("The account Type is doctor:  $isDoctor");
+        // print("The account Status is active:  $isAcess");
         initStrengthData();
         initQuizData();
         initUsersData();

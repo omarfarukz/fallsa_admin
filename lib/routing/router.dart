@@ -4,7 +4,6 @@ import 'package:fallsa_admin/pages/fallRisk/fallRisk.dart';
 import 'package:fallsa_admin/pages/overview/overview.dart';
 import 'package:fallsa_admin/pages/quizs/quiz.dart';
 import 'package:fallsa_admin/pages/strengthTest/strengthTest.dart';
-import 'package:fallsa_admin/pages/strengthTest/widgets/strengthTestTable.dart';
 import 'package:fallsa_admin/pages/users/users.dart';
 
 import 'package:fallsa_admin/routing/routes.dart';
