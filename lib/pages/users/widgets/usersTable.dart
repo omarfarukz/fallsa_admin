@@ -158,8 +158,7 @@ class UsersTable extends StatelessWidget {
 
                                 PdfGridRow row5 = grid.rows.add();
                                 row5.cells[0].value = ' Education';
-                                row5.cells[1].value =
-                                    list[index].education;
+                                row5.cells[1].value = list[index].education;
                                 PdfGridRow row6 = grid.rows.add();
                                 row6.cells[0].value = ' Contact Number';
                                 row6.cells[1].value = list[index].number;
@@ -196,12 +195,6 @@ class UsersTable extends StatelessWidget {
                             DataCell(CustomText(
                               text: list[index].gender,
                             )),
-                            DataCell(CustomText(
-                              text: list[index].education,
-                            )),
-                            DataCell(CustomText(
-                              text: list[index].ic,
-                            )),
                             DataCell(Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -209,6 +202,12 @@ class UsersTable extends StatelessWidget {
                                   text: list[index].dob.toString(),
                                 )
                               ],
+                            )),
+                            DataCell(CustomText(
+                              text: list[index].ic,
+                            )),
+                            DataCell(CustomText(
+                              text: list[index].education,
                             )),
                             DataCell(CustomText(text: list[index].number)),
                             DataCell(CustomText(
@@ -223,7 +222,7 @@ class UsersTable extends StatelessWidget {
                 ),
               ],
             )
-          : const Center(child: Text("You Dont have permission"));
+          : const Center(child: Text("You do not have permission"));
     });
   }
 }

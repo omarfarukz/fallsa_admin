@@ -98,20 +98,23 @@ class FallRiskTable extends StatelessWidget {
                       minWidth: 600,
                       columns: const [
                         DataColumn2(
-                          label: CText(text:"Full Name"),
+                          label: CText(text: "Full Name"),
                           size: ColumnSize.L,
                         ),
                         DataColumn(
-                          label: CText(text:'IC'),
+                          label: CText(text: 'IC'),
                         ),
                         DataColumn(
-                          label: CText(text:'Date'),
+                          label: CText(text: 'Date'),
                         ),
                         DataColumn(
-                          label: CText(text:'Score'),
+                          label: CText(text: 'Score'),
                         ),
                         DataColumn(
-                          label: CText(text:'Risk'),
+                          label: CText(text: 'TUG'),
+                        ),
+                        DataColumn(
+                          label: CText(text: 'Risk'),
                         ),
                       ],
                       rows: List<DataRow>.generate(
@@ -154,8 +157,12 @@ class FallRiskTable extends StatelessWidget {
                                 row4.cells[1].value = '${list[index].score}';
 
                                 PdfGridRow row5 = grid.rows.add();
-                                row5.cells[0].value = ' Risk Type';
-                                row5.cells[1].value = list[index].risk;
+                                row5.cells[0].value = ' TUG ';
+                                row5.cells[1].value = list[index].tug;
+
+                                PdfGridRow row6 = grid.rows.add();
+                                row6.cells[0].value = ' Risk Type';
+                                row6.cells[1].value = list[index].risk;
 
                                 //Set the width
                                 grid.columns[0].width = 100;
@@ -194,6 +201,8 @@ class FallRiskTable extends StatelessWidget {
                             DataCell(
                                 CustomText(text: list[index].score.toString())),
                             DataCell(
+                                CustomText(text: list[index].tug.toString())),
+                            DataCell(
                                 CustomText(text: list[index].risk.toString())),
                           ],
                         ),
@@ -203,7 +212,7 @@ class FallRiskTable extends StatelessWidget {
                 ),
               ],
             )
-          : const Center(child: CText(text:"You Dont have permission"));
+          : const Center(child: CText(text: "You do not have permission"));
     });
   }
 }

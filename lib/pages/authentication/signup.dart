@@ -41,7 +41,7 @@ class SignUpScreen extends GetWidget<AuthController> {
             Row(
               children: [
                 CustomText(
-                  text: "Please fill out the form",
+                  text: "Please fill in the form",
                   color: lightGrey,
                 ),
               ],

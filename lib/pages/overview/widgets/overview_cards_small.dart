@@ -3,8 +3,6 @@ import 'package:fallsa_admin/pages/overview/widgets/info_card_small.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
-
 class OverViewCardsSmallScreen extends StatelessWidget {
   OverViewCardsSmallScreen({Key key}) : super(key: key);
   final UserDataContrller userDataContrller = Get.put(UserDataContrller());
@@ -25,7 +23,7 @@ class OverViewCardsSmallScreen extends StatelessWidget {
             height: _width / 64,
           ),
           InfoCardSamll(
-            title: 'Total Fall Risk Test',
+            title: 'Total Fall Risk Test Results',
             value: userDataContrller.fallRiskList.length.toString(),
             onTap: () {},
             isActive: true,
@@ -34,7 +32,7 @@ class OverViewCardsSmallScreen extends StatelessWidget {
             height: _width / 64,
           ),
           InfoCardSamll(
-            title: 'Total Strength Test',
+            title: 'Total Strength Test result',
             value: userDataContrller.strengthList.length.toString(),
             onTap: () {},
             isActive: true,
@@ -43,7 +41,7 @@ class OverViewCardsSmallScreen extends StatelessWidget {
             height: _width / 64,
           ),
           InfoCardSamll(
-            title: 'Total Attemped Quiz',
+            title: 'Total attempted Quiz',
             value: userDataContrller.quizList.length.toString(),
             onTap: () {},
             isActive: true,

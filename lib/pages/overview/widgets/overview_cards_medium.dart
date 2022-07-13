@@ -26,7 +26,7 @@ class OverViewMediumScreen extends StatelessWidget {
                 width: _width / 64,
               ),
               InfoCard(
-                title: 'Total Fall Risk Test',
+                title: 'Total Fall Risk Test results',
                 value: userDataContrller.fallRiskList.length.toString(),
                 onTap: () {},
                 topColour: Colors.orange,

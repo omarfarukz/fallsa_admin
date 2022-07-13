@@ -28,7 +28,7 @@ class QuizTable extends StatelessWidget {
           ? Column(
               children: [
                 userDataContrller.isDoctor
-                    ? const CText(text:"This is the Doctor's View")
+                    ? const CText(text: "This is the Doctor's View")
                     : Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Row(
@@ -99,20 +99,20 @@ class QuizTable extends StatelessWidget {
                       minWidth: 600,
                       columns: const [
                         DataColumn2(
-                          label: CText(text:"Full Name"),
+                          label: CText(text: "Full Name"),
                           size: ColumnSize.L,
                         ),
                         DataColumn(
-                          label: CText(text:'Ic'),
+                          label: CText(text: 'Ic'),
                         ),
                         DataColumn(
-                          label:CText(text:'Date'),
+                          label: CText(text: 'Date'),
                         ),
                         DataColumn(
-                          label: CText(text:'Pre-Quiz'),
+                          label: CText(text: 'Pre-Quiz'),
                         ),
                         DataColumn(
-                          label:CText(text:'Post-Quiz'),
+                          label: CText(text: 'Post-Quiz'),
                         ),
                       ],
                       rows: List<DataRow>.generate(
@@ -154,8 +154,7 @@ class QuizTable extends StatelessWidget {
 
                               PdfGridRow row5 = grid.rows.add();
                               row5.cells[0].value = ' Post Quiz';
-                              row5.cells[1].value =
-                                  list[index].postCorrect;
+                              row5.cells[1].value = list[index].postCorrect;
 
                               //Set the width
                               grid.columns[0].width = 100;
@@ -201,7 +200,7 @@ class QuizTable extends StatelessWidget {
                 ),
               ],
             )
-          : const Center(child:CText(text:"You Dont have permission"));
+          : const Center(child: CText(text: "You do not have permission"));
     });
   }
 }

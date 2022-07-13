@@ -63,7 +63,7 @@ class AdminScreen extends StatelessWidget {
                       height: size.height * 0.10,
                     ),
                     const Text(
-                      "PleaseKey In the acess Number",
+                      "Please Key In the admin id",
                       style: TextStyle(fontSize: 25),
                     ),
                     SizedBox(
@@ -132,8 +132,7 @@ class AdminScreen extends StatelessWidget {
                                     },
                                   );
                                   var snackBar = const SnackBar(
-                                      content:
-                                          Text("Update Sucuessfull"));
+                                      content: Text("Update Sucuessfull"));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                   doctorIDController.clear();
@@ -152,8 +151,8 @@ class AdminScreen extends StatelessWidget {
                                 .showSnackBar(snackBar);
                           }
                         } else {
-                          var snackBar =
-                              const SnackBar(content: Text("Please provide the UID"));
+                          var snackBar = const SnackBar(
+                              content: Text("Please provide the UID"));
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       },
@@ -175,7 +174,7 @@ class AdminScreen extends StatelessWidget {
               ],
             )
           : const Center(
-              child: Text("Sorry You Do Not have acess to Super Admin"));
+              child: Text("Sorry You  do not have access to Super Admin"));
     });
   }
 }

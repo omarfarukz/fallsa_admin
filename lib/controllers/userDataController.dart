@@ -194,10 +194,14 @@ class UserDataContrller extends GetxController {
   }
 
   //closed here
+
+  //strength test start here
   void searchStrength(String searchedText) {
     if (searchedText.isNotEmpty) {
       strengthList = _allStrengthList
-          .where((e) => e.ic.contains(searchedText.toLowerCase()))
+          .where((e) =>
+              e.ic.contains(searchedText) ||
+              e.name.toLowerCase().contains(searchedText.toLowerCase()))
           .toList();
     } else {
       strengthList = _allStrengthList;

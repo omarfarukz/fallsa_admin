@@ -7,8 +7,15 @@ class FallRiskModel {
   Timestamp date;
   String risk;
   int score;
+  double tug;
   FallRiskModel(
-      {this.name, this.ic, this.date, this.risk, this.score, this.dUid});
+      {this.name,
+      this.ic,
+      this.date,
+      this.risk,
+      this.score,
+      this.dUid,
+      this.tug});
   FallRiskModel.fromMap(
     DocumentSnapshot snapshot,
   ) {
@@ -18,5 +25,6 @@ class FallRiskModel {
     risk = snapshot['risk'];
     score = snapshot['score'];
     dUid = snapshot['dUid'];
+    tug = snapshot['tug'];
   }
 }

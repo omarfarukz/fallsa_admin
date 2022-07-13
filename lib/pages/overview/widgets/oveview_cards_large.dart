@@ -81,164 +81,161 @@ class OverViewCardsLargeScreen extends StatelessWidget {
     return GetBuilder<UserDataContrller>(builder: (userDataContrller) {
       // final list = userDataContrller.fallRiskList;
 
-      return userDataContrller.isAcess
-          ? Stack(
-              children: [
-                Column(
-                  children: [
-                    Row(
+      return Stack(
+        children: [
+          Column(
+            children: [
+              Row(
+                children: [
+                  InfoCard(
+                    title: 'Total Users',
+                    value: userDataContrller.userList.length.toString(),
+                    onTap: () {},
+                    topColour: Colors.orange,
+                  ),
+                  SizedBox(
+                    width: _width / 64,
+                  ),
+                  InfoCard(
+                    title: 'Total Fall Risk Test Results',
+                    value: userDataContrller.fallRiskList.length.toString(),
+                    onTap: () {},
+                    topColour: Colors.blueAccent,
+                  ),
+                  SizedBox(
+                    width: _width / 64,
+                  ),
+                  InfoCard(
+                    title: 'Total Strength Test Result',
+                    value: userDataContrller.strengthList.length.toString(),
+                    onTap: () {},
+                    topColour: Colors.blueGrey,
+                  ),
+                  SizedBox(
+                    width: _width / 64,
+                  ),
+                  InfoCard(
+                    title: 'Total Quiz Attempted',
+                    value: userDataContrller.quizList.length.toString(),
+                    onTap: () {},
+                    topColour: Colors.redAccent,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: _height * 0.10,
+              ),
+              Text(
+                "Welcome ${userDataContrller.adminName} to the Fallsa Admin Panel",
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              SizedBox(
+                height: _height * 0.01,
+              ),
+              Text(
+                "Your ID is: ${userDataContrller.user.uid} ",
+                style: const TextStyle(fontSize: 16),
+              ),
+              SizedBox(
+                height: _height * 0.01,
+              ),
+              const Text(
+                "If you have any account Issues, Please refer to the Administrator with your ID. ",
+                style: TextStyle(fontSize: 16),
+              ),
+              const Divider(),
+              userDataContrller.isAcess
+                  ? Column(
                       children: [
-                        InfoCard(
-                          title: 'Total Users',
-                          value: userDataContrller.userList.length.toString(),
-                          onTap: () {},
-                          topColour: Colors.orange,
+                        SizedBox(
+                          height: _height * 0.05,
+                        ),
+                        const Text(
+                          "Please key in the User id number and click the add button",
+                          style: TextStyle(fontSize: 20),
                         ),
                         SizedBox(
-                          width: _width / 64,
+                          height: _height * 0.02,
                         ),
-                        InfoCard(
-                          title: 'Total Fall Risk Test',
-                          value:
-                              userDataContrller.fallRiskList.length.toString(),
-                          onTap: () {},
-                          topColour: Colors.blueAccent,
-                        ),
-                        SizedBox(
-                          width: _width / 64,
-                        ),
-                        InfoCard(
-                          title: 'Total Strength Test',
-                          value:
-                              userDataContrller.strengthList.length.toString(),
-                          onTap: () {},
-                          topColour: Colors.blueGrey,
-                        ),
-                        SizedBox(
-                          width: _width / 64,
-                        ),
-                        InfoCard(
-                          title: 'Total Quiz Attemped',
-                          value: userDataContrller.quizList.length.toString(),
-                          onTap: () {},
-                          topColour: Colors.redAccent,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: _height * 0.10,
-                    ),
-                    Text(
-                      "Welcome ${userDataContrller.adminName} to the Fallsa Admin Panel",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: _height * 0.01,
-                    ),
-                    Text(
-                      "Your ID is: ${userDataContrller.user.uid} ",
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: _height * 0.01,
-                    ),
-                    const Text(
-                      "If you have any account Issues,Please refer the Administrator with your ID ",
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    const Divider(),
-                    SizedBox(
-                      height: _height * 0.05,
-                    ),
-                    const Text(
-                      "Please key in the patient\'s ID number and click add button",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    SizedBox(
-                      height: _height * 0.02,
-                    ),
-                    const Text(
-                      "Pataients ID can be found in the Profile section of the Fallsa Application",
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: _height * 0.02,
-                    ),
-                    const Text(
-                      "Warning!! Only Existed Patients account could be updated",
-                      style: TextStyle(fontSize: 20, color: Colors.red),
-                    ),
-                    SizedBox(
-                      height: _height * 0.02,
-                    ),
-                    Center(
-                        child: Container(
-                      constraints: const BoxConstraints(maxWidth: 400),
-                      padding: const EdgeInsets.all(16),
-                      child: Column(children: [
-                        TextField(
-                          controller: _pId,
-                          decoration: InputDecoration(
-                              labelText: "Patient's ID",
-                              hintText: "abcdefgh123456",
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20))),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            if (_pId.text.isNotEmpty) {
-                              updatePatient();
-                              var snackBar = const SnackBar(
-                                  content: Text("Update Sucuessfull"));
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
-                              _pId.clear();
-                            } else {
-                              var snackBar = const SnackBar(
-                                  content: Text("Please key in IC Number"));
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
-                            }
-                          },
-                          child: Container(
-                            // margin: EdgeInsets.only(top: 20),
-                            height: _height * 0.05,
-                            alignment: Alignment.center,
-                            // padding: EdgeInsets.symmetric(vertical: 16),
-                            width: double.maxFinite,
-                            decoration: BoxDecoration(
-                                color: active,
-                                borderRadius: BorderRadius.circular(20)),
-                            child: const Center(
-                                child: Text(
-                              "Add Patient",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22,
-                              ),
-                            )),
+                        const Text(
+                          "User ID can be found in the Profile section of the Fallsa Application",
+                          style: TextStyle(
+                            fontSize: 20,
                           ),
                         ),
-                      ]),
-                    )),
-                  ],
-                ),
-                // Align(
-                //   heightFactor: 10,
-                //   widthFactor: 10,
-                //   alignment: Alignment.topLeft,
-                //   child: Text("Hi"),
-                // )
-              ],
-            )
-          : const Center(child: Text("You Dont have permission"));
+                        SizedBox(
+                          height: _height * 0.02,
+                        ),
+                        const Text(
+                          "Warning!! Only Existed user account could be updated",
+                          style: TextStyle(fontSize: 20, color: Colors.red),
+                        ),
+                        SizedBox(
+                          height: _height * 0.02,
+                        ),
+                        Center(
+                            child: Container(
+                          constraints: const BoxConstraints(maxWidth: 400),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(children: [
+                            TextField(
+                              controller: _pId,
+                              decoration: InputDecoration(
+                                  labelText: "User ID",
+                                  hintText: "abcdefgh123456",
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(20))),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                if (_pId.text.isNotEmpty) {
+                                  updatePatient();
+                                  var snackBar = const SnackBar(
+                                      content: Text("Update Sucuessfull"));
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
+                                  _pId.clear();
+                                } else {
+                                  var snackBar = const SnackBar(
+                                      content:
+                                          Text("Please key in the user ID"));
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
+                                }
+                              },
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 20),
+                                height: _height * 0.05,
+                                alignment: Alignment.center,
+                                // padding: EdgeInsets.symmetric(vertical: 16),
+                                width: double.maxFinite,
+                                decoration: BoxDecoration(
+                                    color: active,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: const Center(
+                                    child: Text(
+                                  "Add User",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 22,
+                                  ),
+                                )),
+                              ),
+                            ),
+                          ]),
+                        ))
+                      ],
+                    )
+                  : Container(),
+            ],
+          ),
+        ],
+      );
     });
   }
 }

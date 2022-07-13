@@ -199,7 +199,7 @@ class StrengthTestTable extends StatelessWidget {
                 ),
               ],
             )
-          : const Center(child: Text("You Dont have permission"));
+          : const Center(child: Text("YYou do not have permission"));
     });
   }
 }
