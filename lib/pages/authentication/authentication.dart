@@ -135,6 +135,15 @@ class AuthenticationPage extends GetWidget<AuthController> {
                         Get.offAll(SignUpScreen());
                       },
                       child: const Text('Sign Up as Admin'))),
+              SizedBox(
+                height: 30,
+              ),
+              const Text(
+                  "©️ALL RIGHTS RESERVED UNIVERSITI KEBANGSAAN MALAYSIA 2022",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 10,
+                  )),
             ],
           ),
         ),

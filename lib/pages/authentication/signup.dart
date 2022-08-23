@@ -117,7 +117,7 @@ class SignUpScreen extends GetWidget<AuthController> {
                         'name': nameController.text,
                         'phone': phoneController.text,
                         'docId': user.uid,
-                        'isAcess': false,
+                        'isAccess': false,
                         'isDoctor': true,
                         'isAdmin': false,
                       });

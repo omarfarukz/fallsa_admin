@@ -55,17 +55,15 @@ class UserDataContrller extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    initAdmin();
     initAcess();
+    initAdmin();
+
     initaccType();
     initDoctorData();
     initadnminName();
-    // print("The UID is : ${user.uid}");
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(milliseconds: 3), () {
       try {
-        // print(' The doctor Id: $doctorId');
-        // print("The account Type is doctor:  $isDoctor");
-        // print("The account Status is active:  $isAcess");
+    
         initStrengthData();
         initQuizData();
         initUsersData();
@@ -74,6 +72,30 @@ class UserDataContrller extends GetxController {
         print(e);
       }
     });
+  }
+
+  userFallRisk(String uid) {
+    return FirebaseFirestore.instance
+        .collection('fallRisk')
+        .where('uid', isEqualTo: uid)
+        .orderBy('dateTime')
+        .get();
+  }
+
+  userStrength(String uid) {
+    return FirebaseFirestore.instance
+        .collection('strength')
+        .where('uid', isEqualTo: uid)
+        .orderBy('dateTime')
+        .get();
+  }
+
+  userQuiz(String uid) {
+    return FirebaseFirestore.instance
+        .collection('quiz')
+        .where('uid', isEqualTo: uid)
+        .orderBy('dateTime')
+        .get();
   }
 
 //check the account type
@@ -110,6 +132,7 @@ class UserDataContrller extends GetxController {
           (DocumentSnapshot documentSnapshot) =>
               isAcess = documentSnapshot['isAccess'],
         );
+    print("User Access is : $isAcess");
   }
 
 //check doctor id

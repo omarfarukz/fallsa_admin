@@ -19,7 +19,7 @@ class AdminScreen extends StatelessWidget {
   final doctorAccessController = TextEditingController();
 
   final List<String> roles = [
-    'Doctor',
+    'Healthcare specialist',
     "Researcher",
   ];
   final List<String> access = [
@@ -63,7 +63,7 @@ class AdminScreen extends StatelessWidget {
                       height: size.height * 0.10,
                     ),
                     const Text(
-                      "Please Key In the admin id",
+                      "Please Key in the admin id",
                       style: TextStyle(fontSize: 25),
                     ),
                     SizedBox(

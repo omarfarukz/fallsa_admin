@@ -133,7 +133,7 @@ class OverViewCardsLargeScreen extends StatelessWidget {
               SizedBox(
                 height: _height * 0.01,
               ),
-              Text(
+              SelectableText(
                 "Your ID is: ${userDataContrller.user.uid} ",
                 style: const TextStyle(fontSize: 16),
               ),
@@ -141,7 +141,7 @@ class OverViewCardsLargeScreen extends StatelessWidget {
                 height: _height * 0.01,
               ),
               const Text(
-                "If you have any account Issues, Please refer to the Administrator with your ID. ",
+                "If you have any account issues, Please refer to the Administrator with your ID. ",
                 style: TextStyle(fontSize: 16),
               ),
               const Divider(),
@@ -152,7 +152,7 @@ class OverViewCardsLargeScreen extends StatelessWidget {
                           height: _height * 0.05,
                         ),
                         const Text(
-                          "Please key in the User id number and click the add button",
+                          "Please key in the Fallsa application User id number and click the add button",
                           style: TextStyle(fontSize: 20),
                         ),
                         SizedBox(
@@ -168,7 +168,7 @@ class OverViewCardsLargeScreen extends StatelessWidget {
                           height: _height * 0.02,
                         ),
                         const Text(
-                          "Warning!! Only Existed user account could be updated",
+                          "Warning!! Only Existing user account could be updated",
                           style: TextStyle(fontSize: 20, color: Colors.red),
                         ),
                         SizedBox(
